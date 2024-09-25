@@ -1,0 +1,14 @@
+<!-- Renderizadd condicional -->
+<div *ngIf="links.length > 0, else nolinks"> 
+    <!-- Iteracion de Arrays -->
+    <a *ngFor="let item of links" 
+        class="fa fa-{{item.icon}}" 
+        href="{{item.link}}" 
+        title="{{item.text}}"
+        target="_blank">
+        <span *ngIf="!item.icon">{{item.text}}</span>
+    </a>
+</div>
+<ng-template #nolinks>
+    <p>Por el momento, No contamos con redes sociales</p>
+</ng-template>
