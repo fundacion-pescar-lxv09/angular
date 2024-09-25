@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-interface Link {
-  text: string,
-  link: string,
-  icon?: string
-}
+import { Link } from '../../models/Link'
+
 @Component({
   selector: 'app-social',
   standalone: true,
