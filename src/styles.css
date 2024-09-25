@@ -8,3 +8,6 @@
 body{
     margin: 0;
 }
+main{
+    min-height: min(320px, 30vh);
+}
