@@ -1,0 +1,14 @@
+<nav>
+    <!-- Ruta de redireccionamiento -->
+    <a routerLink>{{appname}}</a>
+    <button [class.open]="isActive" 
+        (click)="isActive = !isActive">
+    </button>
+    <!-- vinculacion de Atributos -->
+    <ul [class]="{ active: isActive }">
+    <!-- Iteracion de rutas de aplicacion -->
+    @for(item of links; track item.text){
+        <li><a routerLink="{{item.link}}">{{item.text}}</a></li> 
+    }
+    </ul>
+</nav>
