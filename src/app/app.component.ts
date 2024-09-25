@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
@@ -14,13 +14,15 @@ import { NavComponent } from "./nav/nav.component";
         FooterComponent,
     ],
     template: `
-        <app-nav/>
+        <app-nav [appname]="title"/>
         <app-header [title]="title" [subtitle]="subtitle"/>
-        <app-footer/>
-        `,
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+        <app-footer/>`
 })
-
 export class AppComponent{
     title = "Fundacion Pescar"
     subtitle = "Capacitacion Angular 2"
+    current = ""
 }
