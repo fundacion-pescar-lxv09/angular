@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    imports: [ HeaderComponent, FooterComponent ],
+    template: `<app-header/><app-footer/>`,
 })
-export class AppComponent {
-  title = 'angularlxv09';
+
+export class AppComponent{
+    title = "Fundacion Pescar"
+    subtitle = "Capacitacion Angular 2"
 }
