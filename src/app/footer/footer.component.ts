@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
+import { SocialComponent } from "../social/social.component";
 
 @Component({
     selector: 'app-footer',
     standalone: true,
+    imports: [ SocialComponent ],
     templateUrl: './footer.template.html',
     styleUrls: ['./footer.styles.css'],
 })
