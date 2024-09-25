@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
+import { NavComponent } from "./nav/nav.component";
 
 @Component({
     selector: 'app-root',
@@ -9,11 +10,12 @@ import { FooterComponent } from "./footer/footer.component";
     imports: [ 
         RouterOutlet,
         HeaderComponent, 
+        NavComponent,
         FooterComponent,
     ],
     template: `
-        <app-header/>
-        <router-outlet></router-outlet>
+        <app-nav/>
+        <app-header [title]="title" [subtitle]="subtitle"/>
         <app-footer/>
         `,
 })
