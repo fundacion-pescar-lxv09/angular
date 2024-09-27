@@ -1,0 +1,23 @@
+* {
+    margin: .2rem;
+    font-weight: normal;
+}
+section{
+    --first: #6668;
+    --second: #2488;
+    max-width: 720px;
+    margin: 2rem auto;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    background: linear-gradient(var(--first), var(--second))
+}
+hr{
+    opacity: .5;
+}
+a{
+    color: #ccc;
+}
+a:hover{
+    color: #eee;
+}
