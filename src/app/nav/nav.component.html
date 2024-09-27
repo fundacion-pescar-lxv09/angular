@@ -8,7 +8,12 @@
     <ul [class]="{ active: isActive }">
     <!-- Iteracion de rutas de aplicacion -->
     @for(item of links; track item.text){
-        <li><a routerLink="{{item.link}}">{{item.text}}</a></li> 
+        <li>
+            <a  routerLink="{{item.link}}" 
+                (click)="setLink(item.text)">
+                {{item.text}}
+            </a>
+        </li> 
     }
     </ul>
 </nav>

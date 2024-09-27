@@ -14,9 +14,10 @@ import { NavComponent } from "./nav/nav.component";
         FooterComponent,
     ],
     template: `
-        <app-nav [appname]="title"/>
+        <app-nav [appname]="title" (useLink)="handleLink($event)"/>
         <app-header [title]="title" [subtitle]="subtitle"/>
-        <main>
+        <main class="container">
+            <p>{{title}} @if (current){ > {{current}} }</p>
             <router-outlet></router-outlet>
         </main>
         <app-footer/>`
@@ -24,5 +25,6 @@ import { NavComponent } from "./nav/nav.component";
 export class AppComponent{
     title = "Fundacion Pescar"
     subtitle = "Capacitacion Angular 2"
-    current = ""
+    current = "pagina principal"
+    handleLink(link:string){ this.current = link }
 }
