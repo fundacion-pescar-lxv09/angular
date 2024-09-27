@@ -15,19 +15,24 @@ interface User{
 })
 export class LoginComponent {
   @Output() onlogin = new EventEmitter<User>()
+  logged = ''
+  show = false
   text = "iniciar sesion"
-  show = false;
+  // Formulario
   login = {
     username: 'c215714n',
     password: ''
   }
   alert = {
-    code: 0,
+    code: 200,
     title: "Inicio de Session",
     message: "Estamos verificando los datos, podras acceder al sition en unos segundos... Muchas Gracias por Ingresar"
   }
+  // Evento
   userLogin(){
     this.onlogin.emit(this.login)
     this.show = true;
+    this.logged = this.login.username;
+    this.login = { username:'', password:'' }
   }
 }

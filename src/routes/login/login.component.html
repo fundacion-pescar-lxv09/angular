@@ -1,5 +1,8 @@
 <form (ngSubmit)="userLogin()" #loginForm>
-    <h2>Bienvenido {{login.username | uppercase}}</h2>
+    <h2>Bienvenido 
+        @if (logged !== "") { {{logged}} }
+        @else { {{login.username | uppercase}} }
+    </h2>
     <label for="username">Ingrese su usuario </label>
     <input #username 
         type="text" 
@@ -18,8 +21,8 @@
         maxlength="50"
         required>
     <button [disabled]="!loginForm.checkValidity()">{{text | uppercase}}</button>
-    <div [class]="{show}">
-        <button (click)="show=!show">x</button>
+    <div [class]="{ show }">
+        <button (click)="show=false">x</button>
         <h3>{{alert.title}}</h3>
         <p>{{alert.message}}</p>
     </div>
