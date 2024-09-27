@@ -15,5 +15,5 @@ export const routes: Routes = [
     { path: 'chart', component:ChartComponent },
     { path: 'products', component:ProductsComponent },
     { path: 'contact', component:ContactComponent },
-    { path: '*', component:NotFoundComponent }
+    { path: '**', component:NotFoundComponent }
 ];
