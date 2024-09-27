@@ -26,12 +26,8 @@ export class LoginComponent {
     title: "Inicio de Session",
     message: "Estamos verificando los datos, podras acceder al sition en unos segundos... Muchas Gracias por Ingresar"
   }
-
   userLogin(){
     this.onlogin.emit(this.login)
     this.show = true;
-  }
-  closeAlert(){
-    this.show = false;
   }
 }

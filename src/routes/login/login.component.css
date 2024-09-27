@@ -31,4 +31,8 @@ div.show{
 }
 div button{
     float: right;
+    z-index: 1;
+}
+button:hover{
+    background-color: #ccc;
 }
