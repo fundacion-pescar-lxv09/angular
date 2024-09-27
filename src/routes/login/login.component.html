@@ -1,1 +1,24 @@
-<p>login works!</p>
+<form (ngSubmit)="userLogin()" #loginForm>
+    <h2>Bienvenido {{login.username | uppercase}}</h2>
+    <label for="username">Ingrese su usuario </label>
+    <input type="text" 
+        name="username" 
+        [(ngModel)]="login.username"
+        pattern="[A-Za-z0-9#!$?]{4,20}"
+        maxlength="20"
+        required>
+    <label for="password">Ingrese su Contraseña </label>
+    <input type="password" 
+        name="password" 
+        autocomplete="on"
+        [(ngModel)]="login.password"
+        minlength="6"
+        maxlength="50"
+        required>
+    <button [disabled]="!loginForm.checkValidity()">{{text | uppercase}}</button>
+    <div [class]="{ show }">
+        <button (click)="closeAlert()">x</button>
+        <h3>{{alert.title}}</h3>
+        <p>{{alert.message}}</p>
+    </div>
+</form>
