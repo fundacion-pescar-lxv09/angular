@@ -1,0 +1,11 @@
+<p >
+    @if (field["required"] && touched){
+        El campo es Obligatorio <br>
+    }
+    @if (field["pattern"]){
+        Debe cumplir con el formato solicitado. {{example}} <br>
+    }
+    @if (field["minlength"]){
+        El campo debe tener al menos {{field.minlength.requiredLength}} caracteres <br>
+    }
+</p>
