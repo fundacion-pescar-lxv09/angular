@@ -1,0 +1,25 @@
+form{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    padding: .25rem;
+    border: none;
+}
+p{
+    margin: 0;
+}
+#aboutField,
+button[type="submit"]{
+    grid-column: 1 / 4;
+}
+button{
+    margin: .5rem;
+}
+
+.alert{
+    padding: .5rem 0;
+    color: #f66;
+}
