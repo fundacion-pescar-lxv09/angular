@@ -1,4 +1,3 @@
-
 ## TypeScript
 
 Es un superconjunto de JavaScript, __desarrollado por Microsoft__, que agrega _tipado estático_ y otras características avanzadas al Lenguaje. Se utiliza para desarrollar _aplicaciones más robustas y escalables_. Permite detectar errores en tiempo de compilación y mejorar la autocompletación en editores.

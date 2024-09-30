@@ -5,5 +5,6 @@ Es un framework de desarrollo de aplicaciones web de código abierto, diseñado 
 Está basado en TypeScript y se utiliza para desarrollar aplicaciones web interactivas y dinámicas. Facilita la creación de componentes reutilizables, la gestión del estado de la aplicación y la manipulación del DOM. Utiliza un sistema de inyección de dependencias, servicios y enrutamiento.
 
 ## Tabla de Contenidos
+* [Caracteristicas](./docs/general.md)
 * [TypeScript](./docs/ts.md)
 * [Angular-cli](./docs/ng.md)
