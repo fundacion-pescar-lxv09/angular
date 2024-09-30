@@ -10,27 +10,27 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  signInForm:FormGroup;
-  constructor(){
+  signInForm:FormGroup
+  constructor() {
     this.signInForm = new FormGroup({
-      user: new FormControl('user', [
+      user: new FormControl('', [
         Validators.required,
         Validators.pattern(/^\S{4,20}$/),
         Validators.minLength(4),
         Validators.maxLength(20),
       ]),
-      email: new FormControl('email', [
+      email: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[^@]\w+@\w+(.\w{2,}){1,4}$/),
         Validators.minLength(8),
       ]),
-      password: new FormControl('pass', [
+      password: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^([?=A-Z][?=a-z][?=0-9][?=#$!?-_]){8,50}$/),
+        Validators.pattern(/^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])).{8,50}$/),
         Validators.minLength(6),
         Validators.maxLength(50),
       ]),
-      birthDate: new FormControl('birthdate', [
+      birthDate: new FormControl('', [
         Validators.required,
         Validators.pattern(/\d{2,4}([\/\-]\d{1,2}){2}/),
       ]),
@@ -60,5 +60,11 @@ export class SigninComponent {
   @Input() text:string = "Registrarse"
   onSubmit (){
     console.log(this.signInForm)
+  }
+  get(k:string){
+    return this.signInForm.get(k)?.errors
+  }
+  touch(k:string){
+    return !this.signInForm.get(k)?.pristine
   }
 }
