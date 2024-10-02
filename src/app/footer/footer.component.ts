@@ -4,7 +4,9 @@ import { SocialComponent } from "../social/social.component";
 @Component({
     selector: 'app-footer',
     standalone: true,
-    imports: [ SocialComponent ],
+    imports: [ 
+        SocialComponent,
+    ],
     templateUrl: './footer.template.html',
     styleUrls: ['./footer.styles.css'],
 })

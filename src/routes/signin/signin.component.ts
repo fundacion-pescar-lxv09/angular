@@ -6,7 +6,11 @@ import { ValidityComponent } from '../../components/validity/validity.component'
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ ValidityComponent, JsonPipe, ReactiveFormsModule ],
+  imports: [ 
+    ValidityComponent, 
+    JsonPipe, 
+    ReactiveFormsModule, 
+  ],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css'
 })

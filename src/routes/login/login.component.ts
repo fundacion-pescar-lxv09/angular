@@ -9,7 +9,11 @@ interface User{
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ FormsModule, JsonPipe, UpperCasePipe],
+  imports: [ 
+    FormsModule, 
+    JsonPipe, 
+    UpperCasePipe,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

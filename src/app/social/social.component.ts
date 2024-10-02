@@ -5,7 +5,9 @@ import { Link } from '../../models/Link'
 @Component({
   selector: 'app-social',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ 
+    CommonModule,
+  ],
   templateUrl: './social.component.html',
   styleUrl: './social.component.css'
 })

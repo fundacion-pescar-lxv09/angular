@@ -5,7 +5,9 @@ import { Error } from '../../models/Error';
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [ RouterLink ],
+  imports: [ 
+    RouterLink,
+  ],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.css'
 })
