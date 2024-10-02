@@ -1,11 +1,17 @@
-<p >
-    @if (field["required"] && touched){
+<p [ngStyle]="{ color: touched ? '#824' : '#eee' }">
+    @if (field?.["required"] && touched){
         El campo es Obligatorio <br>
     }
-    @if (field["pattern"]){
+    @if (field?.["pattern"]){
         Debe cumplir con el formato solicitado. {{example}} <br>
     }
-    @if (field["minlength"]){
-        El campo debe tener al menos {{field.minlength.requiredLength}} caracteres <br>
+    @if (field?.["minlength"]){
+        El campo debe tener al menos {{field?.minlength?.requiredLength}} caracteres <br>
+    }
+    @if (field?.["maxlength"]){
+        El campo debe tener como maximo {{field?.minlength?.requiredLength}} caracteres <br>
+    }
+    @if (field?.['custom']){
+        {{custom}}
     }
 </p>

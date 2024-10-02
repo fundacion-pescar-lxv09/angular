@@ -2,160 +2,69 @@
     <fieldset id="userField">
         <label for="username">Username</label>
         <input type="text" formControlName="user" maxlength="20" #username>
-        <p [class]="{ alert: get('user') }">
-            @if (get('user')?.["required"] && touch('user')){
-                El campo es Obligatorio <br>
-            }
-            @if (get('user')?.["pattern"]){
-                No se admiten espacios en el nombre de usuario <br>
-            }
-            @if (get('user')?.["minlength"]){
-                El campo debe tener al menos 4 caracteres <br>
-            }
-        </p>
+        <app-validity [field]="get('user')" [touched]="touch('user')"
+            example="No se admiten espacios en el nombre"/>
     </fieldset>
     <fieldset id="emailField">
         <label for="email">Email</label>
         <input type="email" formControlName="email" #email>
-        <p [class]="{ alert: get('email') }">
-        @if (get('email')?.["required"] && touch('email')){
-            El campo es Obligatorio <br>
-        }
-        @if (get('email')?.["pattern"]){
-            Escriba una estructura de correo valida 'server' <br>
-        }
-        @if (get('email')?.["minlength"]){
-            El campo debe tener al menos 8 caracteres <br>
-        }
-        </p>
+        <app-validity [field]="get('email')" [touched]="touch('email')" 
+            example="Como 'usuario@servidor'"
+        />
     </fieldset>
     <fieldset id="birthField">
         <label for="birthDate">birthDate</label>
         <input type="date" formControlName="birthDate" #birthDate>
-        <p [class]="{ alert: get('birthDate') }">
-        @if (get('birthDate')?.["required"] && touch('birthDate')){
-            El campo es Obligatorio <br>
-        }
-        @if (get('birthDate')?.["pattern"]){
-            Escriba una estructura de correo valida <br>
-        }
-        @if (get('birthDate')?.["minlength"]){
-            El campo debe tener al menos 8 caracteres <br>
-        }
-        </p>
+        <app-validity [field]="get('birthDate')" [touched]="touch('birthDate')"/>
     </fieldset>
     <fieldset id="pass1Field">
         <label for="password">Escriba una Contraseña</label>
         <input type="password" formControlName="password" #pass1>
-        <p [class]="{ alert: get('password') }">
-        @if (get('password')?.["required"] && touch('password')){
-            El campo es Obligatorio <br>
-        }
-        @if (get('password')?.["pattern"]){
-            Debe cumplir con los requisitos de complejidad
-            (Mayusculas, Minusculas, Numeros) <br>
-        }
-        @if (get('password')?.["minlength"]){
-            El campo debe tener al menos 8 caracteres <br>
-        }
-        @if (get('password')?.['maxlength']){
-            El campo debe poseer como maximo 50 caracteres <br>
-        }
-        </p>
+        <app-validity [field]="get('password')" [touched]="touch('password')"
+        example="Require al menos 1 Mayuscula, una minuscula y 1 numero o simbolo"/>
     </fieldset>
     <fieldset id="pass2Field">
         <label for="password">Repita la Contraseña</label>
         <input type="password" formControlName="password"  #pass2>
-        <p [class]="{ alert: get('password') }">
-        @if (pass2.value == "" && touch('password')){
-            El campo es Obligatorio <br>
-        }
-        @if (pass2.value.length < 8){
-            El campo debe tener al menos 8 caracteres <br>
-        }
-        @if (pass2.value !== pass1.value){
-            Las contraseñas no coinciden
-        }
-        </p>
+        <app-validity [field]="{
+                required: pass2.value == '',
+                custom: pass2.value !== pass1.value,
+                minlength: {
+                    requiredLength: 8,
+                    actualLength: pass2.value.length
+                }
+            }"
+            [touched]="touch('password')"
+            custom="Las contraseñas no coinciden"/>
     </fieldset>
     <fieldset id="websiteField">
         <label for="website">website</label>
         <input formControlName="website" #website>
-        <p [class]="{ alert: get('password') }">
-            @if (get('website')?.["required"] && touch('website')){
-                El campo es Obligatorio <br>
-            }
-            @if (get('website')?.["pattern"]){
-                Debe cumplir con los requisitos de complejidad
-                (Mayusculas, Minusculas, Numeros) <br>
-            }
-            @if (get('website')?.["minlength"]){
-                El campo debe tener al menos 8 caracteres <br>
-            }
-            @if (get('website')?.['maxlength']){
-                El campo debe poseer como maximo 50 caracteres <br>
-            }
-            </p>
+        <app-validity [field]="get('website')" [touched]="touch('website')"
+        example="Debe indicar una url valida como https://fundacionpescar.com.ar"/>
     </fieldset>
     <fieldset id="addressField">
         <label for="address">address</label>
         <input formControlName="address" #address>
-        <p [class]="{ alert: get('user') }">
-            @if (get('address')?.["required"] && touch('email')){
-                El campo es Obligatorio <br>
-            }
-            @if (get('address')?.["pattern"]){
-                Escriba una estructura de correo valida 'server' <br>
-            }
-            @if (get('address')?.["minlength"]){
-                El campo debe tener al menos 8 caracteres <br>
-            }
-            </p>
+        <app-validity [field]="get('address')" [touched]="touch('address')"
+        example="Nombre de Cuidad"/>
     </fieldset>
     <fieldset id="cityField">
         <label for="city">city</label>
         <input formControlName="city" #city>
-        <p [class]="{ alert: get('user') }">
-            @if (get('city')?.["required"] && touch('city')){
-                El campo es Obligatorio <br>
-            }
-            @if (get('city')?.["pattern"]){
-                Escriba una estructura de correo valida 'server' <br>
-            }
-            @if (get('city')?.["minlength"]){
-                El campo debe tener al menos 8 caracteres <br>
-            }
-            </p>
+        <app-validity [field]="get('city')" [touched]="touch('city')"/>
     </fieldset>
     <fieldset id="phoneField">
         <label for="phone">phone</label>
         <input formControlName="phone" #phone>
-        <p [class]="{ alert: get('phone') }">
-            @if (get('phone')?.["required"] && touch('phone')){
-                El campo es Obligatorio <br>
-            }
-            @if (get('phone')?.["pattern"]){
-                Escriba una estructura de correo valida 'server' <br>
-            }
-            @if (get('phone')?.["minlength"]){
-                El campo debe tener al menos 8 caracteres <br>
-            }
-            </p>
+        <app-validity [field]="get('phone')" [touched]="touch('phone')"
+        example="Ingrese solamente digito o respeste el ejemplo (5411) 0303-4567"/>
     </fieldset>
     <fieldset id="aboutField">
         <label for="about">about</label>
         <textarea formControlName="about" #about></textarea>
-        <p [class]="{ alert: get('about') }">
-            @if (get('about')?.["required"] && touch('about')){
-                El campo es Obligatorio <br>
-            }
-            @if (get('about')?.["pattern"]){
-                Escriba una estructura de correo valida 'server' <br>
-            }
-            @if (get('about')?.["minlength"]){
-                El campo debe tener al menos 8 caracteres <br>
-            }
-            </p>
+        {{get('about') | json}}
+        <app-validity [field]="get('about')" [touched]="touch('about')"/>
     </fieldset>
     <button type="submit">{{text}}</button>
 </form>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe, UpperCasePipe } from '@angular/common';
 
@@ -14,15 +14,12 @@ interface User{
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  @Input() text:string = "iniciar sesion"
   @Output() onlogin = new EventEmitter<User>()
   logged = ''
   show = false
-  text = "iniciar sesion"
   // Formulario
-  login = {
-    username: 'c215714n',
-    password: ''
-  }
+  login = { username: '', password: '' }
   alert = {
     code: 200,
     title: "Inicio de Session",

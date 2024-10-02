@@ -1,11 +1,12 @@
 import { JsonPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidityComponent } from '../../components/validity/validity.component';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ JsonPipe, ReactiveFormsModule ],
+  imports: [ ValidityComponent, JsonPipe, ReactiveFormsModule ],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css'
 })
@@ -53,7 +54,7 @@ export class SigninComponent {
       ]),
       about: new FormControl('',[
         Validators.minLength(30),
-        Validators.maxLength(3000),
+        Validators.maxLength(50),
       ])
     })
   }
