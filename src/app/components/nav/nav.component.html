@@ -1,9 +1,8 @@
 <nav>
-    <ul>
     @for(item of links; track item){
-        <li [attr.data-icon]="item.icon">
-            <a [routerLink]="item.link">{{item.text}}</a>
-        </li>
+    <a  [attr.data-icon]="item.icon" 
+        [routerLink]="item.link">
+        {{item.text}}
+    </a>
     }
-    </ul>
 </nav>
