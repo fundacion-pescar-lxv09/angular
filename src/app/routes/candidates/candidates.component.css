@@ -1,0 +1,11 @@
+section {
+    max-width: min(1320px, calc(100% - 1rem));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%,320px),1fr));
+    gap: 1rem;
+    margin: auto;
+    padding: .5rem;
+}
+div{
+    text-align: center;
+}

@@ -1,0 +1,12 @@
+<section>
+    @if (candidates.length){
+        @for(candidate of candidates; track candidate){
+            <app-user-card [cand]="candidate" />
+    }} @else {
+        <div>
+            <mat-progress-bar mode="indeterminate"/>
+            <h2>...Buscando</h2>
+            <p>Todavia no se encontraron Candidatos</p>
+        </div>
+    }
+</section>
