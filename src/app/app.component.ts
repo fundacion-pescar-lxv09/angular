@@ -13,5 +13,9 @@ import { NavComponent } from './components/nav/nav.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  selected = {}
   title = 'angularlxv09';
+  selectList(e:any){
+    this.selected = e
+  }
 }
